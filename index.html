@@ -25,19 +25,35 @@
     </div> -->
 
     <div class="main_container">
+      <nav>
+        <img class="logoimage" src="./logo1.png" alt="" />
+      </nav>
+      
       <div class="first_view_container">
         <p class="fv_heading">How much do you hate your partner?</p>
         <div class="input-group">
-          <input class="input" type="text" id="name1" placeholder="Name 1" />
-          <input class="input" type="text" id="name2" placeholder="Name 2" />
-        </div>
-        <div class="btn_container">
-          <button class="lovebtn" id="calculate">Break Heart</button>
-          <button class="swapbtn" id="swap">Swap</button>
+          <input required class="input" type="text" id="name1" placeholder="Name 1" />
+          <input required class="input" type="text" id="name2" placeholder="Name 2" />
         </div>
       </div>
-      <div id="result" class="result"></div>
+      <div id="result" style="display: none" class="result">
+        <span class="emojis"></span>
+        <p class="result-percentage"></p>
+        <span>Hate Percentage</span>
+      </div>
+      <div class="btn_container">
+        <button type="submit" class="lovebtn" id="calculate">Break Heart</button>
+        <button class="swapbtn" id="swap">Swap</button>
+        <button id="back" class="back">Find Another Heart</button>
+      </div>
     </div>
+
+    <footer>
+      <p class="footer-text">
+        Made with <span class="heart">❤</span> by
+        <a href="" target="_blank">Adnan Kattekaden</a>
+      </p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
