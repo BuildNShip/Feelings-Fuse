@@ -1,11 +1,66 @@
 document.getElementById("calculate").addEventListener("click", function () {
-  const name1 = document.getElementById("name1").value.trim();
-  const name2 = document.getElementById("name2").value.trim();
+    const name1 = document.getElementById("name1").value.trim();
+    const name2 = document.getElementById("name2").value.trim();
 
-  if (name1 !== "" && name2 !== "") {
-    calculateLove(name1, name2);
-  }
+    const name1error = document.getElementsByClassName("name1error");
+    const name2error = document.getElementsByClassName("name2error");
+
+    if (name1 !== "" && name2 !== "") {
+        calculateLove(name1, name2);
+    }
+    if (name1 === "") {
+        name1error[0].style.display = "block";
+        name2error[0].style.display = "none";
+    }
+    if (name2 === "") {
+        name1error[0].style.display = "none";
+        name2error[0].style.display = "block";
+    }
+    if (name1 === "" && name2 === "") {
+        name1error[0].style.display = "block";
+        name2error[0].style.display = "block";
+    }
 });
+
+document.getElementById("name1").addEventListener("keypress", function (event) {
+    const name1 = document.getElementById("name1").value.trim();
+    const name1error = document.getElementsByClassName("name1error");
+    if (name1 !== "") {
+        name1error[0].style.display = "none";
+    }
+    if (event.keyCode === 13) {
+        const name2 = document.getElementById("name2").value.trim();
+        const name2error = document.getElementsByClassName("name2error");
+        if (name2 !== "") {
+            calculateLove(name1, name2);
+        }
+        if (name2 === "") {
+            name1error[0].style.display = "none";
+            name2error[0].style.display = "block";
+        }
+    }
+});
+
+document.getElementById("name2").addEventListener("keypress", function (event) {
+    const name2 = document.getElementById("name2").value.trim();
+    const name2error = document.getElementsByClassName("name2error");
+    if (name2 !== "") {
+        name2error[0].style.display = "none";
+    }
+    if (event.keyCode === 13) {
+        const name1 = document.getElementById("name1").value.trim();
+        const name1error = document.getElementsByClassName("name1error");
+        if (name1 !== "") {
+            calculateLove(name1, name2);
+        }
+        if (name1 === "") {
+            name1error[0].style.display = "block";
+            name2error[0].style.display = "none";
+        }
+    }
+});
+
+
 
 document.getElementById("swap").addEventListener("click", function () {
   swapNames();
@@ -62,7 +117,7 @@ back.addEventListener("click", function () {
 
   // Clear the input fields.
   document.getElementById("name1").value = "";
-    document.getElementById("name2").value = "";
+  document.getElementById("name2").value = "";
 });
 
 function swapNames() {
