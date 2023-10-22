@@ -1,66 +1,64 @@
 document.getElementById("calculate").addEventListener("click", function () {
-    const name1 = document.getElementById("name1").value.trim();
-    const name2 = document.getElementById("name2").value.trim();
+  const name1 = document.getElementById("name1").value.trim();
+  const name2 = document.getElementById("name2").value.trim();
 
-    const name1error = document.getElementsByClassName("name1error");
-    const name2error = document.getElementsByClassName("name2error");
+  const name1error = document.getElementsByClassName("name1error");
+  const name2error = document.getElementsByClassName("name2error");
 
-    if (name1 !== "" && name2 !== "") {
-        calculateLove(name1, name2);
-    }
-    if (name1 === "") {
-        name1error[0].style.display = "block";
-        name2error[0].style.display = "none";
-    }
-    if (name2 === "") {
-        name1error[0].style.display = "none";
-        name2error[0].style.display = "block";
-    }
-    if (name1 === "" && name2 === "") {
-        name1error[0].style.display = "block";
-        name2error[0].style.display = "block";
-    }
+  if (name1 !== "" && name2 !== "") {
+    calculateLove(name1, name2);
+  }
+  if (name1 === "") {
+    name1error[0].style.display = "block";
+    name2error[0].style.display = "none";
+  }
+  if (name2 === "") {
+    name1error[0].style.display = "none";
+    name2error[0].style.display = "block";
+  }
+  if (name1 === "" && name2 === "") {
+    name1error[0].style.display = "block";
+    name2error[0].style.display = "block";
+  }
 });
 
 document.getElementById("name1").addEventListener("keypress", function (event) {
-    const name1 = document.getElementById("name1").value.trim();
-    const name1error = document.getElementsByClassName("name1error");
-    if (name1 !== "") {
-        name1error[0].style.display = "none";
-    }
-    if (event.keyCode === 13) {
-        const name2 = document.getElementById("name2").value.trim();
-        const name2error = document.getElementsByClassName("name2error");
-        if (name2 !== "") {
-            calculateLove(name1, name2);
-        }
-        if (name2 === "") {
-            name1error[0].style.display = "none";
-            name2error[0].style.display = "block";
-        }
-    }
-});
-
-document.getElementById("name2").addEventListener("keypress", function (event) {
+  const name1 = document.getElementById("name1").value.trim();
+  const name1error = document.getElementsByClassName("name1error");
+  if (name1 !== "") {
+    name1error[0].style.display = "none";
+  }
+  if (event.keyCode === 13) {
     const name2 = document.getElementById("name2").value.trim();
     const name2error = document.getElementsByClassName("name2error");
     if (name2 !== "") {
-        name2error[0].style.display = "none";
+      calculateLove(name1, name2);
     }
-    if (event.keyCode === 13) {
-        const name1 = document.getElementById("name1").value.trim();
-        const name1error = document.getElementsByClassName("name1error");
-        if (name1 !== "") {
-            calculateLove(name1, name2);
-        }
-        if (name1 === "") {
-            name1error[0].style.display = "block";
-            name2error[0].style.display = "none";
-        }
+    if (name2 === "") {
+      name1error[0].style.display = "none";
+      name2error[0].style.display = "block";
     }
+  }
 });
 
-
+document.getElementById("name2").addEventListener("keypress", function (event) {
+  const name2 = document.getElementById("name2").value.trim();
+  const name2error = document.getElementsByClassName("name2error");
+  if (name2 !== "") {
+    name2error[0].style.display = "none";
+  }
+  if (event.keyCode === 13) {
+    const name1 = document.getElementById("name1").value.trim();
+    const name1error = document.getElementsByClassName("name1error");
+    if (name1 !== "") {
+      calculateLove(name1, name2);
+    }
+    if (name1 === "") {
+      name1error[0].style.display = "block";
+      name2error[0].style.display = "none";
+    }
+  }
+});
 
 document.getElementById("swap").addEventListener("click", function () {
   swapNames();
@@ -91,6 +89,10 @@ function calculateLove(name1, name2) {
 
   const back = document.getElementById("back");
   back.style.display = "block";
+
+  const hope = document.getElementsByClassName("hope");
+  hope[0].style.display = "block";
+  hope[0].innerHTML = getLoveSuggestions(loveLevel);
 }
 
 const back = document.getElementById("back");
@@ -118,6 +120,8 @@ back.addEventListener("click", function () {
   // Clear the input fields.
   document.getElementById("name1").value = "";
   document.getElementById("name2").value = "";
+
+  document.getElementsByClassName("hope")[0].style.display = "none";
 });
 
 function swapNames() {
