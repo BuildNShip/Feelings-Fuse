@@ -164,18 +164,18 @@ function getRandomInt(min, max) {
 
 function getLoveSuggestions(loveLevel) {
   const funnySuggestions = [
-    "You seem to be in a loving relationship. Keep nurturing it with kindness!",
-    "You're on the right path. Consider planning a special date night to keep the spark alive.",
-    "Things are looking up. Share your dreams and aspirations with each other to strengthen your bond.",
-    "A little challenge may be creeping in. Try a relaxing weekend together to reconnect.",
-    "Tensions are a part of every relationship. Remember to forgive, forget, and move forward together.",
-    "Every relationship has its ups and downs. Seek guidance from a relationship expert to grow stronger together.",
-    "Laughter can mend even the toughest times. Participate in a fun workshop together to reignite the joy.",
-    "Communication is key. Set aside time for open and honest conversations to heal any misunderstandings.",
-    "It's a sign to take care of your relationship. Plan an adventure or a surprise to rekindle your love.",
-    "Emergency! Revitalize your bond with a fresh perspective and memorable experiences.",
-    // Add more positive and hopeful suggestions here.
-  ];
+    "You appear to be experiencing some tensions in your relationship. It's crucial to address the issues openly and honestly.",
+    "Hate can be toxic. Try to find common ground and resolve conflicts through constructive communication.",
+    "It seems like there's a significant level of hate. Consider seeking professional help or mediation to work through your issues.",
+    "Your hate level is dangerously high. It's essential to address and resolve your conflicts as soon as possible to prevent further harm.",
+    "Hate can erode a relationship. Focus on rebuilding trust and understanding to create a healthier connection.",
+    "Tensions can lead to destructive patterns. Take time to cool off and then work on repairing your bond.",
+    "Hate is a heavy burden. Seek support from friends, family, or a therapist to help you navigate your challenges.",
+    "Don't let hate take over. Plan activities that you both enjoy to rekindle the positive aspects of your relationship.",
+    "Sometimes, a fresh start is needed. Explore new ways to connect and rediscover the love you once shared.",
+    "Remember, it's never too late to change. Work on forgiving, forgetting, and rebuilding a stronger connection."
+];
+
 
   const randomIndex = Math.floor(Math.random() * funnySuggestions.length);
   return funnySuggestions[randomIndex];
